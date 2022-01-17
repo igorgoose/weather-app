@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Weather App</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top-bar">
+        <div id="app-name" class="top-bar-item">Weather App</div>
+        <div class="top-bar-item">
+            <button id="refresh-btn" class="top-bar-btn">Refresh</button>
+        </div>
+        <div class="top-bar-item">
+            <button id="units-btn" class="top-bar-btn">Metric</button>
+        </div>
+    </div>
+    <div class="main-container">
+        <div id="location-container" class="location-container">
+            Minsk, Date
+        </div>
+        <div id="cur-w-container" class="cur-w-container">
+            <div class="cur-w-descr-container">
+                <div id="cur-w-descr" class="cur-w-item">
+                    <img id="cur-w-icon" src="http://openweathermap.org/img/wn/{icon}@2x.png" width="100" height="100">
+                </div>
+                <div id="cur-w-temp" class="cur-w-item secondary">
+                    <label id="cur-w-temp-label">-</label>
+                    <label id="cur-w-feels-like">-</label>
+                </div>
+                <div id="cur-w-wind" class="cur-w-item secondary">
+                    -
+                </div>
+                <div id="cur-w-date" class="cur-w-item secondary">-</div>
+            </div>
+        </div>
+        <div id="cur-w-add-descr-container" class="cur-w-add-descr-container">
+            
+        </div>
+        <div class="card-deck">
+            <div id="weather-card-1" class="card">
+                <!-- <div>Description</div>
+                <div>Wind speed</div>
+                <div>Temp</div>
+                <div>Date</div> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/app.js" type="module"></script>
+</body>
+
+</html>
