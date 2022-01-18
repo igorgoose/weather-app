@@ -22,10 +22,18 @@
         <div class="top-bar-item">
             <button id="units-btn" class="top-bar-btn">Metric</button>
         </div>
+        <div class="top-bar-item">
+            <button id="current-location-btn" class="top-bar-btn">To Current Location</button>
+        </div>
+        <form autocomplete="off" id="search-city-form" class="search-form top-bar-item">
+            <input id="search-city-text" class="search-input" type="text" required>
+            <button type="submit" id="search-city-btn" class="top-bar-btn">Search Location</button>
+        </form>
     </div>
     <div class="main-container">
         <div id="location-container" class="location-container">
-            Minsk, Date
+            <div id="location-label"></div>
+            <div id="last-updated-label"></div>
         </div>
         <div id="cur-w-container" class="cur-w-container">
             <div class="cur-w-descr-container">
@@ -39,7 +47,6 @@
                 <div id="cur-w-wind" class="cur-w-item secondary">
                     -
                 </div>
-                <div id="cur-w-date" class="cur-w-item secondary">-</div>
             </div>
         </div>
         <div id="cur-w-add-descr-container" class="cur-w-add-descr-container">
@@ -47,14 +54,11 @@
         </div>
         <div class="card-deck">
             <div id="weather-card-1" class="card">
-                <!-- <div>Description</div>
-                <div>Wind speed</div>
-                <div>Temp</div>
-                <div>Date</div> -->
             </div>
         </div>
     </div>
-
+    <script type="text/javascript" src="./js/properties.js"></script>
+    <script type="text/javascript" src="./js/secret.js"></script>
     <script src="./js/app.js" type="module"></script>
 </body>
 
