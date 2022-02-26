@@ -30,7 +30,7 @@ export function getSavedLocation() {
         return null;
     }
     savedCoords = savedCoords.split(':');
-    var result = { latitude: savedCoords[0], longitude: savedCoords[1], name: savedCoords[2] };
+    let result = { latitude: savedCoords[0], longitude: savedCoords[1], name: savedCoords[2] };
     console.log("Saved location", result);
     return result;
 }
@@ -63,7 +63,7 @@ const metricPropertiesMap = {
     false: nonMetricProperties
 }
 
-var currentIsMetric = null;
+let currentIsMetric = null;
 
 export function getCurrentMetricProperties() {
     return metricPropertiesMap[getCurrentIsMetric()];

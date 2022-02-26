@@ -14,28 +14,38 @@
 </head>
 
 <body>
-    <div class="top-bar">
+    <div id="top-bar" class="top-bar">
         <div id="app-name" class="top-bar-item">Weather App</div>
-        <div class="top-bar-item">
-            <button id="refresh-btn" class="top-bar-btn">Refresh</button>
+        <div id="top-bar-slider" class="top-bar-buttons">
+            <div id="slide-left" class="top-bar-item">
+                <button id="slide-left-btn" class="top-bar-btn slide-left"> < </button>
+            </div>
+            <div class="top-bar-item">
+                <button id="refresh-btn" class="top-bar-btn">Refresh</button>
+            </div>
+            <div class="top-bar-item">
+                <button id="units-btn" class="top-bar-btn">Metric</button>
+            </div>
+            <div class="top-bar-item">
+                <button id="current-location-btn" class="top-bar-btn">To Current Location</button>
+            </div>
+            <div class="top-bar-item">
+                <form autocomplete="off" id="search-city-form" class="search-form">
+                    <input id="search-city-text" class="search-input" type="text" required>
+                    <button type="submit" id="search-city-btn" class="top-bar-btn">Search Location</button>
+                </form>
+            </div>
+            <div id="slide-right" class="top-bar-item">
+                <button id="slide-right-btn" class="top-bar-btn slide-right"> > </button>
+            </div>
         </div>
-        <div class="top-bar-item">
-            <button id="units-btn" class="top-bar-btn">Metric</button>
-        </div>
-        <div class="top-bar-item">
-            <button id="current-location-btn" class="top-bar-btn">To Current Location</button>
-        </div>
-        <form autocomplete="off" id="search-city-form" class="search-form top-bar-item">
-            <input id="search-city-text" class="search-input" type="text" required>
-            <button type="submit" id="search-city-btn" class="top-bar-btn">Search Location</button>
-        </form>
     </div>
     <div class="main-container">
         <div id="location-container" class="location-container">
             <div id="location-label"></div>
             <div id="last-updated-label"></div>
         </div>
-        <div id="cur-w-container" class="cur-w-container">
+        <div id="cur-w-container" class="cur-w-container" style="border: thin solid red;">
             <div class="cur-w-descr-container">
                 <div id="cur-w-descr" class="cur-w-item">
                     <img id="cur-w-icon" src="http://openweathermap.org/img/wn/{icon}@2x.png" width="100" height="100">
@@ -49,6 +59,9 @@
                 </div>
             </div>
         </div>
+        <div class="hourly-container" style="border: thin solid red;">
+            
+        </div>
         <div id="cur-w-add-descr-container" class="cur-w-add-descr-container">
             
         </div>
@@ -57,9 +70,14 @@
             </div>
         </div>
     </div>
+    <template id="hourly-template">
+        <div class="">
+
+        </div>
+      </template>
     <script type="text/javascript" src="./js/properties.js"></script>
     <script type="text/javascript" src="./js/secret.js"></script>
-    <script src="./js/app.js" type="module"></script>
+    <!-- <script src="./js/app.js" type="module"></script> -->
 </body>
 
 </html>

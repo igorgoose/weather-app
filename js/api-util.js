@@ -4,6 +4,9 @@ import { secret } from './secret.js'
 const unitsParamName = 'units';
 const latParamName = 'lat';
 const lonParamName = 'lon';
+const appIdParamName = 'appid';
+const excludeApisOneCall = 'exclude=minutely,alerts'
+
 
 async function callApi(url, method, headers, ...params) {
     console.log(`calling ${url}?${params}`);
@@ -11,7 +14,7 @@ async function callApi(url, method, headers, ...params) {
     console.log(fullUrl);
     const response = await fetch(fullUrl, {
         "method": method,
-        "headers": headers
+        "headers": headers || {}
     });
     return response.json();
 }
@@ -21,7 +24,8 @@ export async function getCurrentWeather(units, {latitude, longitude}) {
     console.log(latitude, longitude)
     let latParam = `${latParamName}=${latitude}`;
     let lonParam = `${lonParamName}=${longitude}`;
-    return callApi(properties.weatherApi.url, 'GET', secret.weatherApi.headers, unitsParam, latParam, lonParam);
+    let keyParam = `${appIdParamName}=${secret.oneCallWeatherApi.key}`
+    return callApi(properties.weatherOneCall.url, 'GET', null, unitsParam, latParam, lonParam, excludeApisOneCall, keyParam);
 }
 
 export async function geocodeLocationName(locationName) {
